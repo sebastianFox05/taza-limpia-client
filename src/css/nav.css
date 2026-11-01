@@ -1,0 +1,155 @@
+/* Cabecera con doble regla, como el encabezado de un formulario impreso */
+.Header {
+  position: relative;
+  z-index: 20;
+  border-bottom: var(--rule-heavy);
+  background: var(--color-paper);
+}
+
+.Header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  max-width: 88rem;
+  margin-inline: auto;
+  padding: var(--space-s) clamp(1rem, 4vw, 3rem);
+}
+
+.Header-strip {
+  padding: 0.25rem clamp(1rem, 4vw, 3rem);
+  background: var(--color-ink);
+  color: var(--color-paper-light);
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+.Nav-toggle {
+  display: none;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 2.75rem;
+  padding: 0.25rem 0.75rem;
+  border: var(--rule-ink);
+  background: transparent;
+  color: var(--color-ink);
+  font: 500 var(--text-small) var(--font-data);
+  cursor: pointer;
+  transition: background-color var(--speed) ease, color var(--speed) ease;
+}
+
+.Nav-toggle:hover {
+  background: var(--color-ink);
+  color: var(--color-paper-light);
+}
+
+.Nav-toggle:active {
+  background: var(--color-accent-dark);
+  color: var(--color-on-accent);
+}
+
+.Nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.Nav-link {
+  display: inline-block;
+  padding: 0.5rem 0;
+  border-bottom: 0.125rem solid transparent;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color var(--speed) ease, color var(--speed) ease;
+}
+
+.Nav-link:hover {
+  border-color: var(--color-accent);
+}
+
+.Nav-link.is-active {
+  border-color: var(--color-ink);
+}
+
+.Nav-link--action {
+  padding: 0.5rem 0.875rem;
+  border: var(--rule-ink);
+}
+
+.Nav-link--action:hover {
+  border-color: var(--color-accent);
+}
+
+.Nav-link--action.is-active {
+  background: var(--color-ink);
+  color: var(--color-paper-light);
+}
+
+.Nav-button {
+  min-height: 2.75rem;
+  padding: 0.5rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font: 500 var(--text-base) var(--font-body);
+  cursor: pointer;
+  transition: color var(--speed) ease;
+}
+
+.Nav-button:hover {
+  color: var(--color-accent);
+}
+
+.Nav-button:active {
+  color: var(--color-accent-dark);
+}
+
+@media (max-width: 860px) {
+  .Nav-toggle {
+    display: inline-flex;
+  }
+
+  .Nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: var(--space-s) clamp(1rem, 4vw, 3rem) var(--space-m);
+    border-bottom: var(--rule-heavy);
+    background: var(--color-paper);
+  }
+
+  .Nav.is-open {
+    display: block;
+  }
+
+  .Nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Nav-item {
+    border-bottom: var(--rule-thin);
+  }
+
+  .Nav-item:last-child {
+    border-bottom: 0;
+    padding-top: var(--space-s);
+  }
+
+  .Nav-link {
+    display: block;
+    padding-block: 0.625rem;
+  }
+
+  .Nav-link--action {
+    text-align: center;
+  }
+
+  .Header-strip {
+    text-align: left;
+  }
+}

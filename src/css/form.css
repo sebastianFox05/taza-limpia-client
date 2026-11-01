@@ -1,0 +1,48 @@
+/* Formularios tipo ficha de cata: casillas con solo la linea de abajo */
+.Form {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.Form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: var(--space-m);
+}
+
+.Form-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s) var(--space-l);
+  margin: 0;
+  padding: var(--space-s) 0 0;
+  border: 0;
+  border-top: var(--rule-thin);
+}
+
+.Form-legend {
+  padding: 0;
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+}
+
+.Form-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.Form-check input {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--color-accent);
+}
+
+.Form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  padding-top: var(--space-s);
+}

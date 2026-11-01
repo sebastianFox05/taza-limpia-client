@@ -1,0 +1,29 @@
+/* Pagina de origenes: columna ancha para paises y estrecha para el resto */
+.Stats {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--space-xl) clamp(2rem, 6vw, 6rem);
+  margin-top: var(--space-xl);
+}
+
+.Stats-title {
+  margin-bottom: var(--space-m);
+}
+
+.Stats-aside {
+  display: grid;
+  gap: var(--space-xl);
+  align-content: start;
+}
+
+.Stats-text {
+  max-width: 38rem;
+  margin-bottom: var(--space-m);
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 860px) {
+  .Stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

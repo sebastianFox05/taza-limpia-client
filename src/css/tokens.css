@@ -1,0 +1,39 @@
+/* Variables del proyecto: papel, tinta y un solo acento */
+:root {
+  --color-paper: #f1eadb;
+  --color-paper-deep: #e6dcc7;
+  --color-paper-light: #f8f2e6;
+  --color-ink: #21160f;
+  --color-ink-soft: #594839;
+  --color-rule: #b5a68e;
+  --color-accent: #a8341c;
+  --color-accent-dark: #7f2613;
+  --color-on-accent: #f8f2e6;
+  --color-backdrop: rgb(33 22 15 / 60%);
+
+  /* Bolsas de la etiqueta segun el tueste */
+  --color-bag-claro: #cfae7f;
+  --color-bag-medio: #8f6840;
+  --color-bag-oscuro: #33241a;
+
+  --font-display: 'Young Serif', Georgia, serif;
+  --font-body: 'Instrument Sans', 'Segoe UI', sans-serif;
+  --font-data: 'DM Mono', Consolas, monospace;
+
+  --text-small: 0.8125rem;
+  --text-base: 1rem;
+  --text-large: 1.25rem;
+  --text-title: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --text-display: clamp(2.5rem, 1.7rem + 4vw, 5.25rem);
+
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1.25rem;
+  --space-l: 2rem;
+  --space-xl: clamp(2.5rem, 2rem + 3vw, 5rem);
+
+  --rule-thin: 0.0625rem solid var(--color-rule);
+  --rule-ink: 0.0625rem solid var(--color-ink);
+  --rule-heavy: 0.1875rem solid var(--color-ink);
+  --speed: 160ms;
+}

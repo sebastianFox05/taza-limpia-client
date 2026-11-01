@@ -1,0 +1,40 @@
+/* Catalogo: filtros estrechos y rejilla de fichas */
+.Catalog {
+  display: grid;
+  grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr);
+  gap: var(--space-l) clamp(2rem, 4vw, 4rem);
+  margin-top: var(--space-l);
+}
+
+.Catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-s) var(--space-l);
+  padding-bottom: var(--space-s);
+  border-bottom: var(--rule-ink);
+}
+
+.Catalog-count {
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.Catalog-sort {
+  width: min(100%, 14rem);
+}
+
+.CoffeeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  column-gap: var(--space-l);
+}
+
+@media (max-width: 980px) {
+  .Catalog {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

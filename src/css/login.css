@@ -1,0 +1,50 @@
+/* Entrada al panel: explicacion a la izquierda y formulario en una hoja */
+.Login {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-l) clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.Login-title {
+  font-size: var(--text-display);
+  line-height: 1;
+}
+
+.Login-text {
+  max-width: 36rem;
+  margin-top: var(--space-m);
+  font-size: var(--text-large);
+  line-height: 1.4;
+}
+
+.Login-list {
+  max-width: 36rem;
+  margin-top: var(--space-l);
+  border-top: var(--rule-ink);
+}
+
+.Login-listItem {
+  padding-block: var(--space-s);
+  border-bottom: var(--rule-thin);
+}
+
+.Login-sheet {
+  padding: var(--space-l);
+  border: var(--rule-ink);
+  background: var(--color-paper-light);
+}
+
+.Login-sheetTitle {
+  margin-bottom: var(--space-m);
+}
+
+@media (max-width: 860px) {
+  .Login {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .Login-sheet {
+    padding: var(--space-m);
+  }
+}

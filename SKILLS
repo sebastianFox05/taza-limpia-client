@@ -1,0 +1,196 @@
+# SKILLS
+
+Este archivo define las habilidades, reglas y criterios de revision del proyecto web. Todos los agentes deben leer este archivo antes de crear, modificar o revisar HTML, CSS o JavaScript.
+
+## Flujo obligatorio de trabajo
+
+1. Abrir `PLAN.md`.
+2. Registrar la tarea como `por hacer` o `en curso`.
+3. Ejecutar el cambio siguiendo estas skills.
+4. Comentar el cambio hecho en `PLAN.md` con fecha y hora.
+5. Marcar la tarea como `completada` solo despues de revisar el resultado.
+
+## Skills generales del proyecto
+
+- Mantener una estructura de carpetas clara, sin espacios, sin numeros innecesarios y con nombres comprensibles.
+- Usar `index.html` como archivo principal.
+- Guardar todo el CSS en una carpeta `css`.
+- Guardar todo el JavaScript en una carpeta `js`.
+- Comentar la estructura general de cada archivo HTML, CSS y JS.
+- Preparar una memoria en PDF que incluya la URL online del dominio o GitHub Pages.
+- Evitar nombres de archivos, carpetas, clases, funciones y variables que sean ambiguos.
+
+## Skill HTML
+
+### Estructura
+
+- Usar HTML semantico: `header`, `nav`, `main`, `section`, `article`, `footer` cuando corresponda.
+- Si existe `header`, incluir un `nav` principal.
+- Cada `section` o `article` debe contener al menos un encabezado o parrafo.
+- Usar un solo `h1` por pagina.
+- Mantener la jerarquia de headings sin saltos incoherentes.
+- No duplicar el contenido de `title`.
+- Usar listas cuando el contenido sea una coleccion de elementos similares.
+- Evitar elementos sueltos repetidos que deberian ser una lista.
+
+### Formularios
+
+- Todo formulario debe incluir `action` y `method`.
+- Si un formulario contiene `input type="file"`, debe incluir `enctype="multipart/form-data"`.
+- Todo control de formulario debe tener `label` asociado.
+
+### Enlaces y botones
+
+- Toda etiqueta `a` debe tener `href` relleno y atributo `title`.
+- Los enlaces externos deben usar `target="_blank"` y `rel="noreferrer"`.
+- No anidar enlaces dentro de botones ni botones dentro de enlaces.
+- Todo elemento que ejecute JavaScript con click debe ser `button`.
+- Todo `button` debe tener `title`.
+- No usar JavaScript intrusivo como `onclick`, `onmouseover` o atributos similares.
+
+### SEO
+
+- Incluir metaetiquetas basicas: `description`, `author`, `robots`, Open Graph y Twitter Card cuando tenga sentido.
+- Preparar textos compatibles con metatags.io.
+- Mantener contenido descriptivo y accesible.
+
+### Imagenes
+
+- Usar `picture` y `source` con `media` siempre que sea posible.
+- Toda imagen debe tener `alt`.
+- Las imagenes fuera del primer viewport deben tener `loading="lazy"`.
+- Evitar imagenes pixeladas.
+- Optimizar imagenes a menos de 900 KB cuando sea posible.
+- Evitar imagenes mayores a 2000 x 2000 px.
+- Preferir SVG en codigo para iconos e imagenes simples.
+
+### Videos
+
+- Usar `video` con `source` en formato `.webm` y, si se necesita compatibilidad extra, `.mp4`.
+- Todo video debe tener `poster`.
+- Optimizar videos entre 1 MB y 4 MB cuando sea posible.
+
+### Malas practicas HTML
+
+- No usar `br` para separar bloques visuales.
+- No usar varios `br` seguidos.
+- No usar `hr` para maquetar separaciones.
+- No usar clases con numeros, por ejemplo `proyecto1`; usar nombres descriptivos como `proyecto-principal` o `proyecto-uno`.
+
+## Skill CSS
+
+### Arquitectura
+
+- Guardar los estilos en `css`.
+- Usar SUIT CSS como metodologia principal.
+- Organizar el CSS por bloques comentados: base, layout, componentes, estados, responsive.
+- Usar custom properties para todos los colores.
+- Evitar `!important`; si aparece, la seccion CSS queda suspendida.
+
+### Medidas y responsive
+
+- Usar `rem`, `em`, `%`, `vh`, `vw` o unidades relativas en al menos el 80% de las medidas.
+- Usar `px` principalmente en `@media` y detalles donde sea razonable.
+- Evitar alturas rigidas en elementos estructurales; preferir `min-height`, contenido flexible y auto-layout con CSS.
+- Revisar margin y padding para que coincidan con el diseno original.
+- Mantener estructura centrada cuando el diseno lo requiera.
+- Evitar scroll horizontal.
+- Revisar pantallas grandes, normales, tablets y moviles.
+
+### Calidad CSS
+
+- Mantener especificidad baja; objetivo: 90% del CSS con especificidad menor a 100.
+- Agrupar propiedades cuando sea claro, por ejemplo usar `margin` en lugar de cuatro propiedades separadas si el resultado es legible.
+- Eliminar declaraciones sin uso.
+- No usar `z-index` mayor a 100.
+- Apuntar a Project Wallace 90 | 90 | 90.
+- Pasar validacion CSS de W3C; warnings esteticos modernos no suspenden.
+
+### Interaccion y animaciones
+
+- Todos los elementos interactivos deben tener estados `hover`, `focus-visible` y `active`.
+- Usar `transition` sin `all`; declarar propiedades concretas.
+- Mantener animaciones fluidas, sin cortes ni bugs.
+- Respetar preferencias de reduccion de movimiento con `prefers-reduced-motion`.
+
+## Skill JavaScript
+
+### Organizacion
+
+- Guardar los scripts en `js`.
+- Cargar scripts con `defer`.
+- Orden recomendado dentro de cada archivo:
+  1. Constantes.
+  2. Variables.
+  3. Funciones.
+  4. Asignaciones de eventos e inicializacion.
+- Usar camelCase para variables y funciones.
+- Usar PascalCase solo para clases o constructores.
+- Las funciones asociadas a eventos del DOM deben terminar en `Handler`.
+- Las variables booleanas deben empezar por verbos como `is`, `has`, `can` o `should`.
+
+### Eventos
+
+- Usar `addEventListener`.
+- Evitar JavaScript intrusivo en HTML.
+- Asignar handlers claros y reutilizables cuando sea posible.
+- No repetir `forEach` sobre los mismos elementos para efectos relacionados si puede resolverse en una sola pasada.
+- Para efectos visuales, cambiar clases en un contenedor cuando sea suficiente, en lugar de modificar muchos hijos.
+
+### Accesibilidad e integracion
+
+- Mantener sincronizados estados visuales, atributos ARIA y comportamiento real.
+- No romper la navegacion por teclado.
+- Evitar depender solo del mouse.
+- Usar botones reales para acciones.
+
+## Skill Review
+
+El agente de revision debe auditar HTML, CSS y JS contra este archivo y contra la rubrica original. Debe priorizar errores que suspenden automaticamente o afectan puntuacion alta.
+
+### Revision obligatoria
+
+- Comprobar que existe URL online en la memoria PDF antes de entrega final.
+- Comprobar que existe memoria PDF.
+- Comprobar que hay comentarios generales en HTML, CSS y JS.
+- Revisar estructura de carpetas y nombres.
+- Validar responsive en escritorio, tablet y movil.
+- Revisar contraste, tamanos de texto, estados interactivos y accesibilidad.
+- Revisar W3C HTML y CSS.
+- Revisar Lighthouse con objetivo de 100 en Accesibilidad y SEO, y mas de 90 en Rendimiento.
+- Revisar ausencia de `!important`, `onclick`, `br` repetidos, `hr` de maquetacion, clases con numeros y `z-index` mayor a 100.
+
+### Formato de reporte
+
+Cada revision debe indicar:
+
+- Archivo revisado.
+- Criterio de la rubrica afectado.
+- Problema encontrado.
+- Severidad: `bloqueante`, `alta`, `media` o `baja`.
+- Accion recomendada.
+- Estado final: `aprobado`, `requiere cambios` o `bloqueado`.
+
+## Rubrica resumida de puntuacion
+
+| Area | Maximo | Objetivo |
+| --- | ---: | --- |
+| Obligatorios | 4 | URL en PDF, memoria PDF y codigo comentado |
+| Estructura de carpetas | 5 | Nombres limpios, `index.html`, carpetas `css` y `js` |
+| Diseno general | 5 | Alturas flexibles, espacios, iconos, centrado e imagenes nitidas |
+| Responsive general | 4 | Correcto en pantallas grandes, normales, tablets y moviles |
+| Responsive a detalle | 4 | Tipografia, menu movil, sin scroll horizontal |
+| Proyecto | 4 | Wallace, crossbrowsing, validacion HTML y CSS |
+| HTML estructura | 5 | Formularios, listas, titles y semantica |
+| HTML SEO | 3 | Metas, headings, botones, sections y header/nav |
+| HTML enlaces | 6 | `target`, `rel`, `title` y `href` |
+| HTML imagenes | 4 | `picture`, peso, tamano, lazy, alt y SVG |
+| HTML videos | 4 | `source`, webm, poster y peso |
+| Malas practicas | 4 | Sin `br` abusivo, `hr`, clases numericas ni `z-index` excesivo |
+| CSS | 3 | Custom properties, especificidad, SUIT CSS y unidades relativas |
+| Animaciones | 7 | Fluidas, transitions concretas y sin cortes |
+| Optimizacion | 9 | `symbol`, CSS limpio, iframes lazy, preconnect y defer |
+| Lighthouse | 5 | 100 global ideal, rendimiento mayor a 90 |
+| Usabilidad y accesibilidad | 8 | Contraste, labels, estados, buttons correctos |
+| JavaScript | 3 | Handlers, orden, booleans y nomenclatura |
+| Comentarios | 3 | Comentarios generales en JS, CSS y HTML |

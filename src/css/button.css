@@ -1,0 +1,60 @@
+/* Botones rectos, como sellos. Tambien se aplica a enlaces que actuan como boton */
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 2.75rem;
+  padding: 0.5rem 1.125rem;
+  border: var(--rule-ink);
+  background: transparent;
+  color: var(--color-ink);
+  font: 500 var(--text-base) var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--speed) ease, color var(--speed) ease, border-color var(--speed) ease;
+}
+
+.Button:hover {
+  background: var(--color-ink);
+  color: var(--color-paper-light);
+}
+
+.Button:active {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: var(--color-on-accent);
+}
+
+.Button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.Button--primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.Button--primary:hover {
+  border-color: var(--color-accent-dark);
+  background: var(--color-accent-dark);
+}
+
+.Button--danger {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.Button--danger:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.Button--small {
+  min-height: 2.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--text-small);
+}

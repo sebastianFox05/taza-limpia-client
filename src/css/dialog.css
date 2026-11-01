@@ -1,0 +1,28 @@
+/* Confirmacion antes de borrar */
+.Dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: var(--space-m);
+  background: var(--color-backdrop);
+}
+
+.Dialog-box {
+  width: min(100%, 30rem);
+  padding: var(--space-l);
+  border: var(--rule-heavy);
+  background: var(--color-paper-light);
+}
+
+.Dialog-title {
+  margin-bottom: var(--space-s);
+}
+
+.Dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+}

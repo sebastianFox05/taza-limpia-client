@@ -1,0 +1,53 @@
+/* Panel de gestion y formulario de cafe */
+.Panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+.Panel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(16rem, 4fr);
+  gap: var(--space-xl) clamp(2rem, 5vw, 5rem);
+  margin-top: var(--space-l);
+}
+
+.Panel-subtitle {
+  padding-bottom: var(--space-s);
+  border-bottom: var(--rule-ink);
+}
+
+.CoffeeEditor {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 3fr);
+  gap: var(--space-l) clamp(2rem, 5vw, 5rem);
+  margin-top: var(--space-l);
+}
+
+.CoffeeEditor-preview {
+  position: sticky;
+  top: var(--space-m);
+  align-self: start;
+}
+
+.CoffeeEditor-caption {
+  margin-top: var(--space-xs);
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 860px) {
+  .Panel-grid,
+  .CoffeeEditor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .CoffeeEditor-preview {
+    position: static;
+    order: -1;
+    max-width: 12rem;
+  }
+}

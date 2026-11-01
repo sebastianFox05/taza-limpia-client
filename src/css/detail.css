@@ -1,0 +1,61 @@
+/* Ficha de un cafe */
+.Detail {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: var(--space-l) clamp(2rem, 6vw, 6rem);
+  margin-top: var(--space-m);
+}
+
+.Detail-back {
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+}
+
+.Detail-title {
+  font-size: var(--text-display);
+  line-height: 1;
+}
+
+.Detail-origin {
+  margin-top: var(--space-s);
+  font-family: var(--font-data);
+}
+
+.Detail-description {
+  max-width: 42rem;
+  margin-block: var(--space-m) var(--space-l);
+  font-size: var(--text-large);
+  line-height: 1.4;
+}
+
+.Detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
+}
+
+.Detail-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-s);
+}
+
+.Detail-subtitle {
+  margin-top: var(--space-l);
+}
+
+@media (max-width: 860px) {
+  .Detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .Detail-media {
+    max-width: 18rem;
+  }
+}
+
+.Detail-info {
+  min-width: 0;
+}

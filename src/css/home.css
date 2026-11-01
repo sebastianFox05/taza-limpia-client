@@ -1,0 +1,108 @@
+/* Portada: titular a la izquierda y ficha desplazada a la derecha */
+.Hero {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--space-l) clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.Hero-title {
+  font-size: var(--text-display);
+  line-height: 1;
+}
+
+.Hero-title em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.Hero-lead {
+  max-width: 38rem;
+  margin-top: var(--space-m);
+  font-size: var(--text-large);
+  line-height: 1.4;
+}
+
+.Hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
+}
+
+.Hero-sheet {
+  padding: var(--space-m);
+  border: var(--rule-ink);
+  background: var(--color-paper-light);
+}
+
+.Hero-sheetHead {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-s);
+  margin-bottom: var(--space-s);
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+}
+
+.Hero-sheetLabel {
+  max-width: 13rem;
+  margin-inline: auto;
+}
+
+.Hero-sheetName {
+  margin-block: var(--space-s) var(--space-xs);
+}
+
+.Facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  margin-top: var(--space-xl);
+  border-block: var(--rule-ink);
+}
+
+.Reading {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: var(--space-l) clamp(2rem, 6vw, 6rem);
+}
+
+.Reading-list {
+  counter-reset: reading;
+}
+
+.Reading-item {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  padding-block: var(--space-m);
+  border-top: var(--rule-thin);
+  counter-increment: reading;
+}
+
+.Reading-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.Reading-item::before {
+  content: counter(reading, upper-alpha);
+  color: var(--color-accent);
+  font-family: var(--font-data);
+}
+
+.Reading-text {
+  margin-top: 0.25rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 860px) {
+  .Hero,
+  .Reading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.Hero-copy,
+.Reading-body {
+  min-width: 0;
+}

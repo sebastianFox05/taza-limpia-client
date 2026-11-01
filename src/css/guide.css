@@ -1,0 +1,108 @@
+/* Guia: indice fijo a un lado y texto de lectura al otro */
+.Guide {
+  display: grid;
+  grid-template-columns: minmax(11rem, 14rem) minmax(0, 1fr);
+  gap: var(--space-l) clamp(2rem, 6vw, 6rem);
+  margin-top: var(--space-l);
+}
+
+.Guide-index {
+  position: sticky;
+  top: var(--space-m);
+  align-self: start;
+  padding-top: var(--space-s);
+  border-top: var(--rule-ink);
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+}
+
+.Guide-indexLink {
+  display: block;
+  padding-block: 0.375rem;
+}
+
+.Guide-section {
+  padding-block: var(--space-m) var(--space-xl);
+  border-top: var(--rule-heavy);
+  scroll-margin-top: var(--space-m);
+}
+
+.Guide-section:last-child {
+  padding-bottom: 0;
+}
+
+.Guide-intro {
+  max-width: 42rem;
+  margin-top: var(--space-s);
+  color: var(--color-ink-soft);
+}
+
+.Entry {
+  display: grid;
+  grid-template-columns: minmax(10rem, 3fr) minmax(0, 8fr);
+  gap: var(--space-xs) var(--space-l);
+  padding-block: var(--space-m);
+  border-bottom: var(--rule-thin);
+}
+
+.Entry-text {
+  max-width: 42rem;
+}
+
+.Entry-taste {
+  margin-top: var(--space-xs);
+  color: var(--color-ink-soft);
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+}
+
+.Steps {
+  margin-top: var(--space-m);
+  counter-reset: step;
+}
+
+.Steps-item {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  max-width: 46rem;
+  padding-block: var(--space-s);
+  border-bottom: var(--rule-thin);
+  counter-increment: step;
+}
+
+.Steps-item::before {
+  content: counter(step, decimal-leading-zero);
+  color: var(--color-accent);
+  font-family: var(--font-data);
+}
+
+.Recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-l);
+  margin-top: var(--space-m);
+}
+
+.Recipes-meta {
+  margin-top: var(--space-xs);
+  font-family: var(--font-data);
+  font-size: var(--text-small);
+}
+
+@media (max-width: 860px) {
+  .Guide,
+  .Entry {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .Guide-index {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-m);
+  }
+}
+
+.Guide-content {
+  min-width: 0;
+}
